@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\PlayerMovement.cs">
+    <Files>
+      <File FileName="Assets\Script\PlayerMovement.cs" Line="11" Column="34" />
+      <File FileName="Assets\Script\AIMovement.cs" Line="48" Column="75" />
+      <File FileName="Assets\Script\Types\Boundary.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <RunToCursorBreakpoint file="C:\Users\BasPasut\Documents\AirHockey\Assets\Script\PlayerMovement.cs" line="11" column="34" />
+      <RunToCursorBreakpoint file="C:\Users\BasPasut\Documents\AirHockey\Assets\Script\PlayerMovement.cs" line="11" column="34" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
