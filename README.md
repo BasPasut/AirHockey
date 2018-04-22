@@ -1,4 +1,6 @@
 # AIRHOCKEY GAME
 ## Sample UI:   
-![Alt text](Assets\SampleUI\Main.JPG);
-![Alt text](Assets\SampleUI\Board.JPG);  
+### Mainmenu  
+![Alt text](Assets/SampleUI/Main.JPG)
+### GameBoard    
+![Alt text](Assets/SampleUI/Board.JPG)
