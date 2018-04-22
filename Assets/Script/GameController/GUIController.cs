@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GUIController : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class GUIController : MonoBehaviour {
     public GameObject WinText;
     public GameObject LoseText;
     public GameObject DrawText;
+    public GameObject PauseText;
 
     [Header("Other")]
     public AudioController audioManager;
@@ -33,23 +35,17 @@ public class GUIController : MonoBehaviour {
         if (isP2Win == 1)
         {
             audioManager.playLoseSound();
-            WinText.SetActive(false);
-            LoseText.SetActive(true);
-            DrawText.SetActive(false);
+            SetTextActive(false, false, true, false);
         }
         else if(isP2Win == -1)
         {
             audioManager.playWinSound();
-            WinText.SetActive(true);
-            LoseText.SetActive(false);
-            DrawText.SetActive(false);
+            SetTextActive(false, true, false, false);
         }
         else
         {
             audioManager.playDrawSound();
-            WinText.SetActive(false);
-            LoseText.SetActive(false);
-            DrawText.SetActive(true);
+            SetTextActive(false, false, false, true);
         }
     }
 
@@ -65,5 +61,33 @@ public class GUIController : MonoBehaviour {
         puckController.RestartPuckPosition();
         playerMovement.ResetPositon();
         aiMovement.ResetPositon();
+    }
+
+    public void PauseGame()
+    {
+        if (Canvas.active == false) { 
+            Canvas.SetActive(true);
+            CanvasRestart.SetActive(false);
+        }
+        else
+        {
+            Canvas.SetActive(false);
+            CanvasRestart.SetActive(true);
+            SetTextActive(true, false, false, false);
+        }
+    }
+
+    public void BacktoMenu()
+    {
+        Time.timeScale = 0;
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void SetTextActive(bool Pause, bool Win, bool Lose, bool Draw)
+    {
+        PauseText.SetActive(Pause);
+        WinText.SetActive(Win);
+        LoseText.SetActive(Lose);
+        DrawText.SetActive(Draw);
     }
 }
