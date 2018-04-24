@@ -81,16 +81,17 @@
   <ItemGroup>
     <Compile Include="Assets\Script\GameController\AIMovement.cs" />
     <Compile Include="Assets\Script\GameController\AudioController.cs" />
+    <Compile Include="Assets\Script\GameController\Boundary.cs" />
     <Compile Include="Assets\Script\GameController\CountDownTimer.cs" />
     <Compile Include="Assets\Script\GameController\GUIController.cs" />
     <Compile Include="Assets\Script\GameController\PlayerMovement.cs" />
-    <Compile Include="Assets\Script\GameController\PuckController.cs" />
+    <Compile Include="Assets\Script\GameController\Puck\NormalPuckController.cs" />
+    <Compile Include="Assets\Script\GameController\Puck\SpecialPuckController.cs" />
     <Compile Include="Assets\Script\GameController\ScoreController.cs" />
     <Compile Include="Assets\Script\MenuController\AudioButtonController.cs" />
     <Compile Include="Assets\Script\MenuController\MenuController.cs" />
     <Compile Include="Assets\Script\Portrait.cs" />
     <Compile Include="Assets\Script\Selection.cs" />
-    <Compile Include="Assets\Script\Types\Boundary.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

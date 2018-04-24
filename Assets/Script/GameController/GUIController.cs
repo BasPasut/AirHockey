@@ -14,14 +14,15 @@ public class GUIController : MonoBehaviour {
     public GameObject LoseText;
     public GameObject DrawText;
     public GameObject PauseText;
+    public GameObject ResumeButton;
 
     [Header("Other")]
-    public AudioController audioManager;
+    public AudioController audioController;
 
     public ScoreController scoreController;
     public CountDownTimer countDownTimer;
 
-    public PuckController puckController;
+    public NormalPuckController puckController;
     public PlayerMovement playerMovement;
     public AIMovement aiMovement;
 
@@ -34,18 +35,21 @@ public class GUIController : MonoBehaviour {
 
         if (isP2Win == 1)
         {
-            audioManager.playLoseSound();
+            audioController.playLoseSound();
             SetTextActive(false, false, true, false);
+            ResumeButton.SetActive(false);
         }
         else if(isP2Win == -1)
         {
-            audioManager.playWinSound();
+            audioController.playWinSound();
             SetTextActive(false, true, false, false);
+            ResumeButton.SetActive(false);
         }
         else
         {
-            audioManager.playDrawSound();
+            audioController.playDrawSound();
             SetTextActive(false, false, false, true);
+            ResumeButton.SetActive(false);
         }
     }
 
@@ -53,8 +57,10 @@ public class GUIController : MonoBehaviour {
     {
         Time.timeScale = 1;
 
+        audioController.playButtonSound();
         Canvas.SetActive(true);
         CanvasRestart.SetActive(false);
+        ResumeButton.SetActive(true);
 
         countDownTimer.ResetTime();
         scoreController.ResetScores();
@@ -65,21 +71,27 @@ public class GUIController : MonoBehaviour {
 
     public void PauseGame()
     {
-        if (Canvas.active == false) { 
-            Canvas.SetActive(true);
-            CanvasRestart.SetActive(false);
-        }
-        else
+        if (Canvas.active == true)
         {
+            audioController.playButtonSound();
             Canvas.SetActive(false);
             CanvasRestart.SetActive(true);
             SetTextActive(true, false, false, false);
         }
+        else
+        {
+            audioController.playButtonSound();
+            Canvas.SetActive(true);
+            CanvasRestart.SetActive(false);
+        }
+        
     }
 
     public void BacktoMenu()
     {
         Time.timeScale = 0;
+        audioController.playButtonSound();
+        ResumeButton.SetActive(true);
         SceneManager.LoadScene("Menu");
     }
 

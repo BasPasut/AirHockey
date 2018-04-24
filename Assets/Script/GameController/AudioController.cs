@@ -6,9 +6,12 @@ public class AudioController : MonoBehaviour {
 
     public AudioClip Collision;
     public AudioClip Goal;
+    public AudioClip DebuffGoal;
+    public AudioClip BuffGoal;
     public AudioClip WinSound;
     public AudioClip LoseSound;
     public AudioClip DrawSound;
+    public AudioClip ButtonSound;
 
     private AudioSource audioSource;
 
@@ -40,5 +43,20 @@ public class AudioController : MonoBehaviour {
     public void playDrawSound()
     {
         audioSource.PlayOneShot(DrawSound);
+    }
+
+    public void playDebuffSound()
+    {
+        audioSource.PlayOneShot(DebuffGoal);
+    }
+    
+    public void playBuffSound()
+    {
+        audioSource.PlayOneShot(BuffGoal);
+    }
+
+    public void playButtonSound()
+    {
+        audioSource.PlayOneShot(ButtonSound);
     }
 }

@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour {
 	public void PlayGame()
     {
         abc.PlayButtonSound();
+        Time.timeScale = 1;
         SceneManager.LoadScene("AirHockey");
     }
 

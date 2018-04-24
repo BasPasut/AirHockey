@@ -9,6 +9,8 @@ public class AIMovement : MonoBehaviour {
     private Vector2 startingPosition;
 
 	public Rigidbody2D Puck;
+    public Rigidbody2D BuffPuck;
+    public Rigidbody2D DebuffPuck;
 
 	public Transform PlayerBoundaryHolder;
 	private Boundary playerBoundary;
@@ -37,7 +39,7 @@ public class AIMovement : MonoBehaviour {
 	}
 
 	private void FixedUpdate(){
-        if (!PuckController.IsGoal)
+        if (!NormalPuckController.IsGoal)
         {
 		float movementSpeed;
             if (Puck.position.y < puckBoundary.Down)
@@ -45,7 +47,7 @@ public class AIMovement : MonoBehaviour {
                 if (offSetDelay)
                 {
                     offSetDelay = false;
-                    XaxisDelay = Random.Range(-1f, 1f);
+                    XaxisDelay = Random.Range(-3f, 3f);
                 }
                 movementSpeed = MaxMovementSpeed * Random.Range(0.1f, 0.3f);
                 targetPosition = new Vector2(Mathf.Clamp(Puck.position.x + XaxisDelay, playerBoundary.Left, playerBoundary.Right), startingPosition.y);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PuckController : MonoBehaviour {
+public class NormalPuckController : MonoBehaviour {
 
     public ScoreController ScoreControllerInstance;
     public static bool IsGoal{get; private set;}
