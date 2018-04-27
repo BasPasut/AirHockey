@@ -6,21 +6,20 @@ public class SpecialPuckController : MonoBehaviour
 {
 
     public float MaxSpeed;
-    public CountDownTimer cdt;
+    public Rigidbody2D rb;
     public GameObject SPPuck;
     public GameObject P1;
     public GameObject P2;
-
     private bool IsGoal;
+
     public AudioController audioController;
 
 
     // Use this for initialization
     void Start()
     {
-        SPPuck.AddComponent<Rigidbody2D>();
+        rb = SPPuck.GetComponent<Rigidbody2D>();
         IsGoal = false;        
-        StartCoroutine(SpawnSPPuck());
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -31,14 +30,20 @@ public class SpecialPuckController : MonoBehaviour
             if (SPPuck.gameObject.name == "PuckB")
             {
                 audioController.playBuffSound();
-                SPPuck.gameObject.SetActive(false);
-                P2.transform.localScale *= 2;
+                ResetPuck();
+                if (P2.transform.localScale.x == 1)
+                {
+                    P2.transform.localScale *= 2;
+                }
             }
             else if (SPPuck.gameObject.name == "PuckF")
             {
                 audioController.playDebuffSound();
-                SPPuck.gameObject.SetActive(false);
-                P2.transform.localScale /= 2;
+                ResetPuck();
+                if (P2.transform.localScale.x == 1)
+                {
+                    P2.transform.localScale /= 2;
+                }
             }
         }
         else if (other.tag == "P1Goal")
@@ -47,25 +52,42 @@ public class SpecialPuckController : MonoBehaviour
             if (SPPuck.gameObject.name == "PuckB")
             {
                 audioController.playBuffSound();
-                SPPuck.gameObject.SetActive(false);
-                P1.transform.localScale *= 2;
+                ResetPuck();
+                if (P1.transform.localScale.x == 1)
+                {
+                    P1.transform.localScale *= 2;
+                }
             }
             else if (SPPuck.gameObject.name == "PuckF")
             {
                 audioController.playDebuffSound();
-                SPPuck.gameObject.SetActive(false);
-                P1.transform.localScale /= 2;
+                ResetPuck();
+                if (P1.transform.localScale.x == 1)
+                {
+                    P1.transform.localScale /= 2;
+                }
             }
         }
     }
 
-    private IEnumerator SpawnSPPuck()
+    public void SpawnSPPuck(float timeRemaining)
     {
-        yield return new WaitForSecondsRealtime(1);
-        SPPuck.SetActive(true);
-        //SPPuck. = new Vector2(0, 0);
-        //SPPuck.position = new Vector2(Random.Range(-2.08f, 2.18f), 0);
+        if ((int)timeRemaining % 20 == 0)
+        {
+            if (SPPuck.active == false)
+            {
+                SPPuck.SetActive(true);
+                //rb.velocity = new Vector2(0, 0);
+                rb.position = new Vector2(Random.Range(-2.08f,2.16f), 0);
+            }
+        }
 
+    }
+
+    public void ResetPuck()
+    {
+        rb.position = new Vector2(0, 0);
+        SPPuck.gameObject.SetActive(false);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -76,6 +98,6 @@ public class SpecialPuckController : MonoBehaviour
 
     private void FixedUpdate()
     {
-       // SPPuck.velocity = Vector2.ClampMagnitude(SPPuck.velocity, MaxSpeed);
+       rb.velocity = Vector2.ClampMagnitude(rb.velocity, MaxSpeed);
     }
 }

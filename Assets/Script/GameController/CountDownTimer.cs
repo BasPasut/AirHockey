@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class CountDownTimer : MonoBehaviour
 {
-    public float timeRemaining;
     private float startTime;
 
+    public float timeRemaining;
     public Text CountDown;
     public GUIController gController;
     public ScoreController scoreController;
+    public SpecialPuckController SPpuck;
 
 
     void Start()
@@ -26,6 +27,7 @@ public class CountDownTimer : MonoBehaviour
         {
             timeRemaining -= Time.deltaTime;
             OnBoard();
+            SPpuck.SpawnSPPuck(timeRemaining);
         }
         else
         {
