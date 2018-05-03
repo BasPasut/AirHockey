@@ -5,12 +5,10 @@ using UnityEngine;
 public class AIMovement : MonoBehaviour {
 
     public float MaxMovementSpeed;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private Vector2 startingPosition;
 
 	public Rigidbody2D Puck;
-    public Rigidbody2D BuffPuck;
-    public Rigidbody2D DebuffPuck;
 
 	public Transform PlayerBoundaryHolder;
 	private Boundary playerBoundary;
@@ -67,5 +65,6 @@ public class AIMovement : MonoBehaviour {
     public void ResetPositon()
     {
         rb.position = startingPosition;
+        rb.transform.localScale.Set(1, 1, 1);
     }
 }

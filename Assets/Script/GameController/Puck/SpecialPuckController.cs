@@ -86,7 +86,6 @@ public class SpecialPuckController : MonoBehaviour
 
     public void ResetPuck()
     {
-        rb.position = new Vector2(0, 0);
         SPPuck.gameObject.SetActive(false);
     }
 
