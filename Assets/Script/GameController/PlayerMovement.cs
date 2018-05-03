@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	bool isClicked;
 	bool canMove;
 	public Rigidbody2D rb;
+    public Rigidbody2D P1;
     private Vector2 startPosition;
 
 	public Transform BoundaryHolder;
@@ -53,6 +54,13 @@ public class PlayerMovement : MonoBehaviour {
     public void ResetPositon()
     {
         rb.position = startPosition;
-        rb.transform.localScale.Set(1, 1, 1);
+        if (rb.transform.localScale.x > 1)
+        {
+            P1.transform.localScale /= 2;
+        }
+        if (rb.transform.localScale.x < 1)
+        {
+            P1.transform.localScale *= 2;
+        }
     }
 }

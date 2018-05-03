@@ -85,6 +85,8 @@
     <Compile Include="Assets\Script\GameController\CountDownTimer.cs" />
     <Compile Include="Assets\Script\GameController\GUIController.cs" />
     <Compile Include="Assets\Script\GameController\PlayerMovement.cs" />
+    <Compile Include="Assets\Script\GameController\Puck\BuffPuck.cs" />
+    <Compile Include="Assets\Script\GameController\Puck\DebuffPuck.cs" />
     <Compile Include="Assets\Script\GameController\Puck\NormalPuckController.cs" />
     <Compile Include="Assets\Script\GameController\Puck\SpecialPuckController.cs" />
     <Compile Include="Assets\Script\GameController\ScoreController.cs" />

@@ -65,6 +65,13 @@ public class AIMovement : MonoBehaviour {
     public void ResetPositon()
     {
         rb.position = startingPosition;
-        rb.transform.localScale.Set(1, 1, 1);
+        if (rb.transform.localScale.x > 1)
+        {
+            rb.transform.localScale /= 2;
+        }
+        if (rb.transform.localScale.x < 1)
+        {
+            rb.transform.localScale *= 2;
+        }
     }
 }

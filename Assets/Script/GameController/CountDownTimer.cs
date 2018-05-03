@@ -11,7 +11,8 @@ public class CountDownTimer : MonoBehaviour
     public Text CountDown;
     public GUIController gController;
     public ScoreController scoreController;
-    public SpecialPuckController SPpuck;
+    public SpecialPuckController BuffPuck;
+    public SpecialPuckController DebuffPuck;
 
 
     void Start()
@@ -27,7 +28,8 @@ public class CountDownTimer : MonoBehaviour
         {
             timeRemaining -= Time.deltaTime;
             OnBoard();
-            SPpuck.SpawnSPPuck(timeRemaining);
+            BuffPuck.SpawnSPPuck(timeRemaining);
+            DebuffPuck.SpawnSPPuck(timeRemaining);
         }
         else
         {
