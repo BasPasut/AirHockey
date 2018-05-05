@@ -23,7 +23,7 @@ public class GUIController : MonoBehaviour {
     public CountDownTimer countDownTimer;
 
     public NormalPuckController puckController;
-    public SpecialPuckController specialPuck;
+    public SpecialPuckController BuffPuck, DebuffPuck;
     public PlayerMovement playerMovement;
     public AIMovement aiMovement;
 
@@ -68,7 +68,8 @@ public class GUIController : MonoBehaviour {
         puckController.RestartPuckPosition();
         playerMovement.ResetPositon();
         aiMovement.ResetPositon();
-        specialPuck.ResetPuck();
+        BuffPuck.ResetPuck();
+        DebuffPuck.ResetPuck();
     }
 
     public void PauseGame()

@@ -15,6 +15,7 @@ public class MenuController : MonoBehaviour {
     public void Set2Players(bool isOn)
     {
         abc.PlayButtonSound();
-        Selection.is2Players = isOn;
+        Selecter.is2Players = isOn;
+        SceneManager.LoadScene("ServerMenu");
     }
 }
