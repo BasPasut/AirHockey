@@ -19,23 +19,23 @@ Platform assembly: D:\OOP2 project\AirHockey\TestMultiplayer_Data\Managed\UnityE
 Loading D:\OOP2 project\AirHockey\TestMultiplayer_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
 Platform assembly: D:\OOP2 project\AirHockey\TestMultiplayer_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading D:\OOP2 project\AirHockey\TestMultiplayer_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.177 seconds
+- Completed reload, in  0.056 seconds
 Platform assembly: D:\OOP2 project\AirHockey\TestMultiplayer_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\OOP2 project\AirHockey\TestMultiplayer_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initialized touch support.
-UnloadTime: 0.978171 ms
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.724930 ms
+UnloadTime: 1.921185 ms
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.744296 ms
 Connecting to photon...
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 
-Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 406.
-Total: 0.376098 ms (FindLiveObjects: 0.041876 ms CreateObjectMapping: 0.011061 ms MarkObjects: 0.275752 ms  DeleteObjects: 0.046222 ms)
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 440.
+Total: 0.446419 ms (FindLiveObjects: 0.036345 ms CreateObjectMapping: 0.012246 ms MarkObjects: 0.318419 ms  DeleteObjects: 0.079012 ms)
 
 We are connected to master
  
@@ -54,13 +54,13 @@ We are connected to Room
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.712295 ms
+UnloadTime: 0.932345 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 499.
-Total: 0.326715 ms (FindLiveObjects: 0.053333 ms CreateObjectMapping: 0.010271 ms MarkObjects: 0.253234 ms  DeleteObjects: 0.009481 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 529.
+Total: 0.474074 ms (FindLiveObjects: 0.045037 ms CreateObjectMapping: 0.011061 ms MarkObjects: 0.413629 ms  DeleteObjects: 0.003555 ms)
 
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 3fcc -> priority: 1 
-  Thread -> id: 3008 -> priority: 1 
-  Thread -> id: 2e14 -> priority: 1 
-  Thread -> id: 3a38 -> priority: 1 
+  Thread -> id: 4ba4 -> priority: 1 
+  Thread -> id: 28a4 -> priority: 1 
+  Thread -> id: 4604 -> priority: 1 
+  Thread -> id: 4804 -> priority: 1 

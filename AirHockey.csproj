@@ -85,9 +85,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Photon Script\menuLogic.cs" />
     <Compile Include="Assets\Photon Script\photonButton.cs" />
     <Compile Include="Assets\Photon Script\photonConnect.cs" />
+    <Compile Include="Assets\Photon Script\photonHandler.cs" />
     <Compile Include="Assets\Photon\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />
     <Compile Include="Assets\Photon\Photon Unity Networking\Plugins\PhotonNetwork\Enums.cs" />
     <Compile Include="Assets\Photon\Photon Unity Networking\Plugins\PhotonNetwork\Extensions.cs" />
@@ -163,6 +163,7 @@
     <Compile Include="Assets\Script\GameController\Boundary.cs" />
     <Compile Include="Assets\Script\GameController\CountDownTimer.cs" />
     <Compile Include="Assets\Script\GameController\GUIController.cs" />
+    <Compile Include="Assets\Script\GameController\MultiplayerScript\OnlinePlayerMovement.cs" />
     <Compile Include="Assets\Script\GameController\PlayerMovement.cs" />
     <Compile Include="Assets\Script\GameController\Puck\BuffPuck.cs" />
     <Compile Include="Assets\Script\GameController\Puck\DebuffPuck.cs" />
@@ -173,6 +174,7 @@
     <Compile Include="Assets\Script\MenuController\MenuController.cs" />
     <Compile Include="Assets\Script\Portrait.cs" />
     <Compile Include="Assets\Script\Selecter.cs" />
+    <Compile Include="Assets\move.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Photon\Photon Unity Networking\changelog.txt" />

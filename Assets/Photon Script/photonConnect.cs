@@ -45,5 +45,5 @@ public class photonConnect : MonoBehaviour
         Debug.Log("Dis from photon");
     }
 
-
+    
 }
