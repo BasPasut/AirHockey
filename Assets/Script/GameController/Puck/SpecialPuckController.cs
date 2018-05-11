@@ -10,6 +10,7 @@ public abstract class SpecialPuckController : MonoBehaviour
     public GameObject SPPuck;
     public GameObject P1;
     public GameObject P2;
+    public static bool IsAppear;
 
     public AudioController audioController;
 
@@ -17,7 +18,8 @@ public abstract class SpecialPuckController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rb = SPPuck.GetComponent<Rigidbody2D>();   
+        rb = SPPuck.GetComponent<Rigidbody2D>();
+        IsAppear = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -32,11 +34,10 @@ public abstract class SpecialPuckController : MonoBehaviour
         }
     }
 
-    public abstract void SpawnSPPuck(float timeRemaining);
-
     public void ResetPuck()
     {
         SPPuck.gameObject.SetActive(false);
+        IsAppear = false;
 
     }
 
@@ -52,4 +53,6 @@ public abstract class SpecialPuckController : MonoBehaviour
     }
 
     public abstract void BuffAction(GameObject player);
+
+    public abstract void SpawnSPPuck(float timeRemaining);
 }

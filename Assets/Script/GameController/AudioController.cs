@@ -12,6 +12,7 @@ public class AudioController : MonoBehaviour {
     public AudioClip LoseSound;
     public AudioClip DrawSound;
     public AudioClip ButtonSound;
+    public AudioClip SpecialStageSound;
 
     private AudioSource audioSource;
 
@@ -58,5 +59,10 @@ public class AudioController : MonoBehaviour {
     public void playButtonSound()
     {
         audioSource.PlayOneShot(ButtonSound);
+    }
+
+    public void playSpecialStageSound()
+    {
+        audioSource.PlayOneShot(SpecialStageSound);
     }
 }

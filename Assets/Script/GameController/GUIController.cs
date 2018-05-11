@@ -8,6 +8,7 @@ public class GUIController : MonoBehaviour {
     [Header("Canvas")]
     public GameObject Canvas;
     public GameObject CanvasRestart;
+    public GameObject CanvasSpecialStage;
 
     [Header("CanvasRestart")]
     public GameObject WinText;
@@ -16,6 +17,9 @@ public class GUIController : MonoBehaviour {
     public GameObject PauseText;
     public GameObject ResumeButton;
 
+    [Header("CanvasSpecialStage")]
+    public Rigidbody2D Minipuck;
+
     [Header("Other")]
     public AudioController audioController;
 
@@ -23,9 +27,15 @@ public class GUIController : MonoBehaviour {
     public CountDownTimer countDownTimer;
 
     public NormalPuckController puckController;
-    public SpecialPuckController specialPuck;
+    public SpecialPuckController BuffPuck;
+    public SpecialPuckController DebuffPuck;
     public PlayerMovement playerMovement;
     public AIMovement aiMovement;
+
+    private void Start()
+    {
+        Minipuck = GetComponent<Rigidbody2D>();
+    }
 
     public void ShowRestartCanvas(int isP2Win)
     {
@@ -68,7 +78,8 @@ public class GUIController : MonoBehaviour {
         puckController.RestartPuckPosition();
         playerMovement.ResetPositon();
         aiMovement.ResetPositon();
-        specialPuck.ResetPuck();
+        BuffPuck.ResetPuck();
+        DebuffPuck.ResetPuck();
     }
 
     public void PauseGame()

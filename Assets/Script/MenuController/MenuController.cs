@@ -15,6 +15,6 @@ public class MenuController : MonoBehaviour {
     public void Set2Players(bool isOn)
     {
         abc.PlayButtonSound();
-        Selection.is2Players = isOn;
+        SelectionMode.is2Players = isOn;
     }
 }

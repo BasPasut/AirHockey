@@ -119,11 +119,17 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>Assets/Photon Unity Networking/Editor/PhotonNetwork/Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Photon3Unity3D">
+      <HintPath>Assets/Plugins/Photon3Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="AirHockey.csproj">
-      <Project>{8A315804-5DEC-B0D1-ED34-AE2528105675}</Project>
-      <Name>AirHockey</Name>
+    <ProjectReference Include="AirHockey.Plugins.csproj">
+      <Project>{989C3B72-D104-6FE1-6AB8-8A0C89CDE7FC}</Project>
+      <Name>AirHockey.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +160,8 @@
     <None Include="Assets\Photon Unity Networking\changelog.txt" />
     <None Include="Assets\Photon Unity Networking\link.xml" />
     <None Include="Assets\Photon Unity Networking\readme.txt" />
+    <None Include="Assets\Plugins\Photon3Unity3D.xml" />
+    <None Include="Assets\Plugins\release_history.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

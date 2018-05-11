@@ -26,7 +26,9 @@ public class CountDownTimer : MonoBehaviour
 
         if (timeRemaining > 0)
         {
+            Time.timeScale = 1;
             timeRemaining -= Time.deltaTime;
+
             OnBoard();
             BuffPuck.SpawnSPPuck(timeRemaining);
             DebuffPuck.SpawnSPPuck(timeRemaining);
@@ -38,11 +40,11 @@ public class CountDownTimer : MonoBehaviour
             int P2Score = int.Parse(scoreController.P2ScoreText.text);
             if (P1Score > P2Score)
             {
-               gController.ShowRestartCanvas(-1);
+                gController.ShowRestartCanvas(-1);
             }
-            else if(P1Score < P2Score)
+            else if (P1Score < P2Score)
             {
-               gController.ShowRestartCanvas(1);
+                gController.ShowRestartCanvas(1);
             }
             else
             {
