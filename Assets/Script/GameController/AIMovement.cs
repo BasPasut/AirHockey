@@ -39,6 +39,19 @@ public class AIMovement : MonoBehaviour
                                         PuckBoundaryHolder.GetChild(2).position.x,
                                         PuckBoundaryHolder.GetChild(3).position.x);
 
+        switch (AILevel.selector)
+        {
+            case AILevel.Level.normal:
+                MaxMovementSpeed = 10;
+                break;
+            case AILevel.Level.hard:
+                MaxMovementSpeed = 15;
+                break;
+            case AILevel.Level.impossible:
+                MaxMovementSpeed = 20;
+                break;
+        }
+
     }
 
     private void FixedUpdate()

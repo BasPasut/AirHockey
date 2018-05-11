@@ -27,8 +27,8 @@ public class GUIController : MonoBehaviour {
     public CountDownTimer countDownTimer;
 
     public NormalPuckController puckController;
-    public SpecialPuckController BuffPuck;
-    public SpecialPuckController DebuffPuck;
+    public SpecialPuckController BuffPuck, DebuffPuck;
+
     public PlayerMovement playerMovement;
     public AIMovement aiMovement;
 
