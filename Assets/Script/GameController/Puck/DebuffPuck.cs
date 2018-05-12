@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DebuffPuck : SpecialPuckController
 {
+    public CountDownTimer cdt;
+
     public override void BuffAction(GameObject player)
     {
             audioController.playDebuffSound();
@@ -14,9 +16,9 @@ public class DebuffPuck : SpecialPuckController
         }
     }
 
-    public override void SpawnSPPuck(float timeRemaining)
+    public override void SpawnSPPuck(int currentTime)
     {
-        if ((int)timeRemaining % 10 == 0)
+        if (currentTime % 20 == 0)
         {
             if (SPPuck.active == false)
             {

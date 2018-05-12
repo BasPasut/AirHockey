@@ -6,18 +6,19 @@ using UnityEngine.UI;
 public class CountDownTimer : MonoBehaviour
 {
     private float startTime;
+    public int currentTime;
 
     public float timeRemaining;
     public Text CountDown;
     public GUIController gController;
     public ScoreController scoreController;
-    public SpecialPuckController BuffPuck;
-    public SpecialPuckController DebuffPuck;
+    public SpecialPuckController Buffpuck, Debuffpuck;
 
 
     void Start()
     {
         startTime = timeRemaining;
+        currentTime = (int)timeRemaining;
     }
 
     // Update is called once per frame
@@ -28,10 +29,11 @@ public class CountDownTimer : MonoBehaviour
         {
             Time.timeScale = 1;
             timeRemaining -= Time.deltaTime;
+            currentTime = (int)timeRemaining;
 
             OnBoard();
-            BuffPuck.SpawnSPPuck(timeRemaining);
-            DebuffPuck.SpawnSPPuck(timeRemaining);
+            Buffpuck.SpawnSPPuck(currentTime);
+            Debuffpuck.SpawnSPPuck(currentTime);
         }
         else
         {
@@ -57,7 +59,6 @@ public class CountDownTimer : MonoBehaviour
     {
         if (timeRemaining > 0)
         {
-            //CountDown.text =  (timeRemaining / 60).ToString("00") + ":" + (timeRemaining % 60).ToString("00");
             CountDown.text = ((int)timeRemaining).ToString();
         }
         else

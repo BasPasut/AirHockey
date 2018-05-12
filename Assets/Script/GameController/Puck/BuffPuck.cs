@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuffPuck : SpecialPuckController
 {
+
     public override void BuffAction(GameObject player)
     {
         audioController.playBuffSound();
@@ -14,9 +15,9 @@ public class BuffPuck : SpecialPuckController
         }
     }
 
-    public override void SpawnSPPuck(float timeRemaining)
+    public override void SpawnSPPuck(int currentTime)
     {
-        if ((int)timeRemaining % 20 == 0)
+        if (currentTime % 30 == 0)
         {
             if (SPPuck.active == false)
             {

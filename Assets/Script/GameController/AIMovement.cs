@@ -10,7 +10,6 @@ public class AIMovement : MonoBehaviour
     private Vector2 startingPosition;
 
     public Rigidbody2D Puck;
-    public Rigidbody2D Buffpuck;
     public Rigidbody2D Debuffpuck;
 
     public Transform PlayerBoundaryHolder;
@@ -20,7 +19,6 @@ public class AIMovement : MonoBehaviour
     private Boundary puckBoundary;
 
     private Vector2 targetPosition;
-    private Vector2 targetPosition2;
     private bool offSetDelay = false;
     private float XaxisDelay;
 
@@ -45,10 +43,10 @@ public class AIMovement : MonoBehaviour
                 MaxMovementSpeed = 10;
                 break;
             case AILevel.Level.hard:
-                MaxMovementSpeed = 15;
+                MaxMovementSpeed = 20;
                 break;
             case AILevel.Level.impossible:
-                MaxMovementSpeed = 20;
+                MaxMovementSpeed = 30;
                 break;
         }
 
@@ -56,29 +54,41 @@ public class AIMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!NormalPuckController.IsGoal)
+        if (SpecialPuckController.IsAppear)
         {
-            float movementSpeed;
-            if (Puck.position.y < puckBoundary.Down)
-            {
-                if (offSetDelay)
-                {
-                    offSetDelay = false;
-                    XaxisDelay = Random.Range(-5f, 5f);
-                }
-                movementSpeed = MaxMovementSpeed * Random.Range(0.1f, 0.3f);
-                targetPosition = new Vector2(Mathf.Clamp(Puck.position.x + XaxisDelay, playerBoundary.Left, playerBoundary.Right), startingPosition.y);
-            }
-            else
-            {
-                offSetDelay = true;
-                movementSpeed = Random.Range(MaxMovementSpeed * 0.4f, MaxMovementSpeed);
-                targetPosition = new Vector2(Mathf.Clamp(Puck.position.x, playerBoundary.Left, playerBoundary.Right),
-                                              Mathf.Clamp(Puck.position.y, playerBoundary.Down, playerBoundary.Up));
-            }
-            rb.MovePosition(Vector2.MoveTowards(rb.position, targetPosition,
-                movementSpeed * Time.fixedDeltaTime));
+            SetAiMovePosition(Debuffpuck);
         }
+        else
+        {
+            if (!NormalPuckController.IsGoal)
+            {
+                SetAiMovePosition(Puck);
+            }
+        }
+    }
+
+    public void SetAiMovePosition(Rigidbody2D PuckType)
+    {
+        float movementSpeed;
+        if (PuckType.position.y < puckBoundary.Down)
+        {
+            if (offSetDelay)
+            {
+                offSetDelay = false;
+                XaxisDelay = Random.Range(-4f, 4f);
+            }
+            movementSpeed = MaxMovementSpeed * Random.Range(0.1f, 0.3f);
+            targetPosition = new Vector2(Mathf.Clamp(PuckType.position.x + XaxisDelay, playerBoundary.Left, playerBoundary.Right), startingPosition.y);
+        }
+        else
+        {
+            offSetDelay = true;
+            movementSpeed = Random.Range(MaxMovementSpeed * 0.4f, MaxMovementSpeed);
+            targetPosition = new Vector2(Mathf.Clamp(PuckType.position.x, playerBoundary.Left, playerBoundary.Right),
+                                          Mathf.Clamp(PuckType.position.y, playerBoundary.Down, playerBoundary.Up));
+        }
+        rb.MovePosition(Vector2.MoveTowards(rb.position, targetPosition,
+            movementSpeed * Time.fixedDeltaTime));
     }
 
     public void ResetPositon()

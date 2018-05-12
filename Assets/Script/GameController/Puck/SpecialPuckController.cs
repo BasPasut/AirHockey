@@ -19,7 +19,7 @@ public abstract class SpecialPuckController : MonoBehaviour
     void Start()
     {
         rb = SPPuck.GetComponent<Rigidbody2D>();
-        IsAppear = false;
+        IsAppear = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -54,5 +54,5 @@ public abstract class SpecialPuckController : MonoBehaviour
 
     public abstract void BuffAction(GameObject player);
 
-    public abstract void SpawnSPPuck(float timeRemaining);
+    public abstract void SpawnSPPuck(int currentTime);
 }

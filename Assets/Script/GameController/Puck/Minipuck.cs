@@ -9,6 +9,7 @@ public class Minipuck : NormalPuckController
     void Start()
     {
         minipuck = GetComponent<Rigidbody2D>();
+        minipuck.transform.localScale /= 2;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -32,11 +32,6 @@ public class GUIController : MonoBehaviour {
     public PlayerMovement playerMovement;
     public AIMovement aiMovement;
 
-    private void Start()
-    {
-        Minipuck = GetComponent<Rigidbody2D>();
-    }
-
     public void ShowRestartCanvas(int isP2Win)
     {
         Time.timeScale = 0;
