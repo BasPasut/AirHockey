@@ -66,30 +66,15 @@ public class AIMovement : MonoBehaviour
                     offSetDelay = false;
                     XaxisDelay = Random.Range(-5f, 5f);
                 }
-                if(SpecialPuckController.IsAppear == true) {
-                    movementSpeed = MaxMovementSpeed * Random.Range(0.1f, 0.3f);
-                    targetPosition = new Vector2(Mathf.Clamp(Buffpuck.position.x + XaxisDelay, playerBoundary.Left, playerBoundary.Right), startingPosition.y);
-                }
-                else {
                 movementSpeed = MaxMovementSpeed * Random.Range(0.1f, 0.3f);
                 targetPosition = new Vector2(Mathf.Clamp(Puck.position.x + XaxisDelay, playerBoundary.Left, playerBoundary.Right), startingPosition.y);
-                }
             }
             else
             {
                 offSetDelay = true;
-                if (SpecialPuckController.IsAppear == true)
-                {
-                    movementSpeed = Random.Range(MaxMovementSpeed * 0.4f, MaxMovementSpeed);
-                    targetPosition = new Vector2(Mathf.Clamp(Buffpuck.position.x, playerBoundary.Left, playerBoundary.Right),
-                                                  Mathf.Clamp(Buffpuck.position.y, playerBoundary.Down, playerBoundary.Up));
-                }
-                else
-                {
-                    movementSpeed = Random.Range(MaxMovementSpeed * 0.4f, MaxMovementSpeed);
-                    targetPosition = new Vector2(Mathf.Clamp(Puck.position.x, playerBoundary.Left, playerBoundary.Right),
-                                                  Mathf.Clamp(Puck.position.y, playerBoundary.Down, playerBoundary.Up));
-                }
+                movementSpeed = Random.Range(MaxMovementSpeed * 0.4f, MaxMovementSpeed);
+                targetPosition = new Vector2(Mathf.Clamp(Puck.position.x, playerBoundary.Left, playerBoundary.Right),
+                                              Mathf.Clamp(Puck.position.y, playerBoundary.Down, playerBoundary.Up));
             }
             rb.MovePosition(Vector2.MoveTowards(rb.position, targetPosition,
                 movementSpeed * Time.fixedDeltaTime));
