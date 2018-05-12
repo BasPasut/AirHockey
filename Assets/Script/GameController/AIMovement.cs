@@ -11,12 +11,16 @@ public class AIMovement : MonoBehaviour
 
     public Rigidbody2D Puck;
     public Rigidbody2D Debuffpuck;
+    public Rigidbody2D buffpuck;
 
     public Transform PlayerBoundaryHolder;
     private Boundary playerBoundary;
 
     public Transform PuckBoundaryHolder;
     private Boundary puckBoundary;
+
+    public BuffPuck buff;
+    public DebuffPuck debuff;
 
     private Vector2 targetPosition;
     private bool offSetDelay = false;
@@ -56,7 +60,11 @@ public class AIMovement : MonoBehaviour
     {
         if (SpecialPuckController.IsAppear)
         {
-            SetAiMovePosition(Debuffpuck);
+            if (buff.apPear)
+                SetAiMovePosition(buffpuck);
+
+            else
+                SetAiMovePosition(Debuffpuck);
         }
         else
         {
