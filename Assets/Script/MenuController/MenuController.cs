@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
  */ 
 public class MenuController : MonoBehaviour {
 
+    private Difficulty difficulty;
     public AudioButtonController click;
     public GameObject start, normal, hard, impossible;
 
@@ -30,7 +31,8 @@ public class MenuController : MonoBehaviour {
     public void NormalLevel()
     {
         click.PlayButtonSound();
-        AILevel.selector = AILevel.Level.normal;
+        setDifficulty(new NormalDifficulty());
+        this.difficulty.handleDifficulty();
         PlayGame();
 
     }
@@ -39,7 +41,8 @@ public class MenuController : MonoBehaviour {
     public void HardLevel()
     {
         click.PlayButtonSound();
-        AILevel.selector = AILevel.Level.hard;
+        setDifficulty(new HardDifficulty());
+        this.difficulty.handleDifficulty();
         PlayGame();
 
     }
@@ -48,8 +51,12 @@ public class MenuController : MonoBehaviour {
     public void ImpossibleLevel()
     {
         click.PlayButtonSound();
-        AILevel.selector = AILevel.Level.impossible;
+        setDifficulty(new ImpossibleDifficulty());
+        this.difficulty.handleDifficulty();
         PlayGame();
 
+    }
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
     }
 }

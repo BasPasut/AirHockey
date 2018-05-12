@@ -24,7 +24,7 @@ public abstract class SpecialPuckController : MonoBehaviour
 
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         rb = SPPuck.GetComponent<Rigidbody2D>();
         IsAppear = true;

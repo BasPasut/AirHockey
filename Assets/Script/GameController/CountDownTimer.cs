@@ -18,14 +18,14 @@ public class CountDownTimer : MonoBehaviour
     public SpecialPuckController Buffpuck, Debuffpuck;
 
     /**init time of the game when it start */
-    void Start()
+    private void Start()
     {
         startTime = timeRemaining;
         currentTime = (int)timeRemaining;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
 
         if (timeRemaining > 0)
@@ -59,7 +59,7 @@ public class CountDownTimer : MonoBehaviour
     }
 
     /** print remaining time on scene if it out of time will print  "Time's up" */
-    void OnBoard()
+    public void OnBoard()
     {
         if (timeRemaining > 0)
         {

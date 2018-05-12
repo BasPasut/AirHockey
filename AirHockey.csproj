@@ -13,14 +13,12 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectGenerator>VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.6.5f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -86,7 +84,11 @@
     <Compile Include="Assets\Script\GameController\AudioController.cs" />
     <Compile Include="Assets\Script\GameController\Boundary.cs" />
     <Compile Include="Assets\Script\GameController\CountDownTimer.cs" />
+    <Compile Include="Assets\Script\GameController\Difficulty.cs" />
     <Compile Include="Assets\Script\GameController\GUIController.cs" />
+    <Compile Include="Assets\Script\GameController\HardDifficulty.cs" />
+    <Compile Include="Assets\Script\GameController\ImpossibleDifficulty.cs" />
+    <Compile Include="Assets\Script\GameController\NormalDifficulty.cs" />
     <Compile Include="Assets\Script\GameController\PlayerMovement.cs" />
     <Compile Include="Assets\Script\GameController\Puck\BuffPuck.cs" />
     <Compile Include="Assets\Script\GameController\Puck\DebuffPuck.cs" />
@@ -97,9 +99,6 @@
     <Compile Include="Assets\Script\MenuController\AudioButtonController.cs" />
     <Compile Include="Assets\Script\MenuController\MenuController.cs" />
     <Compile Include="Assets\Script\Portrait.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

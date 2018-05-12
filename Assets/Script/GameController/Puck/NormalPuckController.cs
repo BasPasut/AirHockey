@@ -20,7 +20,7 @@ public class NormalPuckController : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	private void Start () {
         rb = GetComponent<Rigidbody2D>();
         IsGoal = false;
 	}
