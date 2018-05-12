@@ -2,28 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Script for AI to play the game
+ */
 public class AIMovement : MonoBehaviour
 {
-
+    /** max speed for AI */
     public float MaxMovementSpeed;
+    /** Rigidbody2D for AI */
     public Rigidbody2D rb;
+    /** Start position for the AI*/
     private Vector2 startingPosition;
 
+    /** Rigidbody2D of Puck */
     public Rigidbody2D Puck;
+    /** Rigidbody2D of DebuffPuck*/
     public Rigidbody2D Debuffpuck;
+    /** Rigidbody2D of BuffPuck*/
     public Rigidbody2D buffpuck;
 
+    /** Transform of PlayerBoundary */
     public Transform PlayerBoundaryHolder;
+    /** Boundary playerBoundary*/
     private Boundary playerBoundary;
 
+    /** Transform of PuckBoundaryr */
     public Transform PuckBoundaryHolder;
+    /** Boundary of PuckBoundary*/
     private Boundary puckBoundary;
 
     public BuffPuck buff;
     public DebuffPuck debuff;
 
+    /** targetPosition for AI */
     private Vector2 targetPosition;
+
     private bool offSetDelay = false;
+
     private float XaxisDelay;
 
     // Use this for initialization
@@ -75,6 +90,12 @@ public class AIMovement : MonoBehaviour
         }
     }
 
+    /**
+     * Calculate normal puck to hit it back to main player when SpecialPuck is appear on scene.
+     * It will hit the buff puck and debuff puck first.
+     * 
+     * @param PuckType puck type that appear on scene.
+     */
     public void SetAiMovePosition(Rigidbody2D PuckType)
     {
         float movementSpeed;
@@ -99,6 +120,9 @@ public class AIMovement : MonoBehaviour
             movementSpeed * Time.fixedDeltaTime));
     }
 
+    /**
+     * Reset position of the puck when it is in the goal
+     */
     public void ResetPositon()
     {
         rb.position = startingPosition;

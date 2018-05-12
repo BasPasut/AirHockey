@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Script for player to perform a movement when we click and drag
+ */
 public class PlayerMovement : MonoBehaviour {
-	
+	/** boolean for check if player have been clicked or not */
 	bool isClicked;
+    /** boolean for check if player can move */
 	bool canMove;
+    /** Rigidbody2D for player */
 	public Rigidbody2D rb;
+    /** Start position for player */
     private Vector2 startPosition;
-
+    /** Transfrom of Boundary */
 	public Transform BoundaryHolder;
 
+    /** Boundary of playerBoundary */
 	Boundary playerBoundary;
-
+    /** Collider2D of player  */
 	Collider2D playerCollider;
 
 	// Use this for initialization
@@ -27,6 +34,9 @@ public class PlayerMovement : MonoBehaviour {
                                        BoundaryHolder.GetChild (3).position.x);
 	}
 	
+    /**
+     * check if we click on the player or not if we click the player will follow our cursor 
+     */
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButton (0)) {
@@ -50,6 +60,9 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 
+    /**
+     * Reset player
+     */
     public void ResetPositon()
     {
         rb.position = startPosition;

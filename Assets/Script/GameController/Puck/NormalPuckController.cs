@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/**
+ * Script for Puck
+ */
 public class NormalPuckController : MonoBehaviour {
 
+    /** ScoreController of Puck */
     public ScoreController ScoreControllerInstance;
+    /** boolean for check if puck is in goal or not */
     public static bool IsGoal{get; private set;}
+    /** max spped of Puck */
     public float MaxSpeed;
+    /** Rigidbody2D of Puck */
     private Rigidbody2D rb;
 
     public AudioController audioController;
@@ -19,6 +25,11 @@ public class NormalPuckController : MonoBehaviour {
         IsGoal = false;
 	}
 
+    /**
+     * Check if puck is in goal
+     * 
+     * @param other
+     */
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!IsGoal)
@@ -45,6 +56,9 @@ public class NormalPuckController : MonoBehaviour {
         audioController.playCollisionSound();
     }
 
+    /**
+     * Reset puck after in goal 
+     */
     private IEnumerator ResetPuck(bool IsP2Score)
     {
             yield return new WaitForSecondsRealtime(1);
@@ -60,6 +74,9 @@ public class NormalPuckController : MonoBehaviour {
         }
     }
 
+    /**
+     * Restart Puck position
+     */
     public void RestartPuckPosition()
     {
         rb.position = new Vector2(0, 0);

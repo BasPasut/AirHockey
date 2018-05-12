@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ *Script for perform a sound after some action
+ */
 public class AudioController : MonoBehaviour {
 
     public AudioClip Collision;

@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/**
+ * Script for main menu 
+ */ 
 public class MenuController : MonoBehaviour {
 
     public AudioButtonController click;
     public GameObject start, normal, hard, impossible;
-    private AILevel chooseLevel; 
 
-
+    /** Start game */
     private void PlayGame()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("AirHockey");
     }
 
+    /** set level of AI */
     public void ChooseLevel()
     {
         click.PlayButtonSound();
@@ -23,6 +26,7 @@ public class MenuController : MonoBehaviour {
         impossible.SetActive(true);
     }
 
+    /** set game to normal level */
     public void NormalLevel()
     {
         click.PlayButtonSound();
@@ -31,6 +35,7 @@ public class MenuController : MonoBehaviour {
 
     }
 
+    /** set game to hard level */
     public void HardLevel()
     {
         click.PlayButtonSound();
@@ -39,6 +44,7 @@ public class MenuController : MonoBehaviour {
 
     }
 
+    /** set game to impossible level */
     public void ImpossibleLevel()
     {
         click.PlayButtonSound();

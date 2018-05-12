@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/**
+ * Script for scene to be show
+ */
 public class GUIController : MonoBehaviour {
 
     [Header("Canvas")]
@@ -32,6 +35,9 @@ public class GUIController : MonoBehaviour {
     public PlayerMovement playerMovement;
     public AIMovement aiMovement;
 
+    /**
+     * Show restart menu
+     */
     public void ShowRestartCanvas(int isP2Win)
     {
         Time.timeScale = 0;
@@ -59,6 +65,9 @@ public class GUIController : MonoBehaviour {
         }
     }
 
+    /** 
+     * Restart the game 
+     */
     public void RestartGame()
     {
         Time.timeScale = 1;
@@ -77,6 +86,9 @@ public class GUIController : MonoBehaviour {
         DebuffPuck.ResetPuck();
     }
 
+    /**
+     * show pause menu
+     */
     public void PauseGame()
     {
         if (Canvas.active == true)
@@ -95,6 +107,9 @@ public class GUIController : MonoBehaviour {
         
     }
 
+    /**
+     *  show main menu
+     */
     public void BacktoMenu()
     {
         Time.timeScale = 0;
@@ -102,6 +117,7 @@ public class GUIController : MonoBehaviour {
         ResumeButton.SetActive(true);
         SceneManager.LoadScene("Menu");
     }
+
 
     public void SetTextActive(bool Pause, bool Win, bool Lose, bool Draw)
     {
