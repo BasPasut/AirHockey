@@ -7,9 +7,9 @@ using UnityEngine;
  */
 public class PlayerMovement : MonoBehaviour {
 	/** boolean for check if player have been clicked or not */
-	bool isClicked;
+	 private bool isClicked;
     /** boolean for check if player can move */
-	bool canMove;
+	 private bool canMove;
     /** Rigidbody2D for player */
 	public Rigidbody2D rb;
     /** Start position for player */
@@ -18,9 +18,9 @@ public class PlayerMovement : MonoBehaviour {
 	public Transform BoundaryHolder;
 
     /** Boundary of playerBoundary */
-	Boundary playerBoundary;
+	private Boundary playerBoundary;
     /** Collider2D of player  */
-	Collider2D playerCollider;
+	private Collider2D playerCollider;
 
 	// Use this for initialization
 	void Start () {
