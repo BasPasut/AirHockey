@@ -15,11 +15,12 @@ Our AirHockey is 2D arcade game that playe have to hit a puck into enemy's goal 
 ![Alt text](Assets/SampleUI/DataBase.jpg)
 
 ## Installation :paperclip:
+
 | PC | Linux |MacOSX|
-|:----------------:|:-----------:|:-----------:|
+|:---------------:|:-----------:|:-----------:|
 |[Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Window/x86)         |[Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Linux/x86)   |[Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Mac/x86)|
 
-##### Comment MacOSX still have bugs about resolution. We'll try to fix it in the next patch.
+##### Comment: MacOSX still have bugs about resolution. We'll try to fix it in the next patch.
 
 ## What we have use in this project from OOP2 Class :orange_book:
 
