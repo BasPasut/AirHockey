@@ -1,5 +1,5 @@
-# AIRHOCKEY GAME
-## AirHockey
+# AIRHOCKEY GAME :video_game:
+## AirHockey :milky_way:
 
 Our AirHockey is 2D arcade game that playe have to hit a puck into enemy's goal with a limit time. While the game is playing there will be a 2 type of special puck that spawn in the middle of the scence. Which are buff and debuff special puck. To get a special puck action player have to hit a special puck in his goal. For example if player hit debuff puck to enemy goal the enemy will get a debuff action but if player hit a buff puck to his goal the player will get action of buff puck
 
@@ -14,26 +14,26 @@ Our AirHockey is 2D arcade game that playe have to hit a puck into enemy's goal 
 ### Score board
 ![Alt text](Assets/SampleUI/DataBase.jpg)
 
-## Installation
-| Platform           | URL              | 
-|:-------------------|:-----------------|
-| Window  |  [Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Window/x86) | 
-| Linux   |  [Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Linux/x86) |
-| MacOSX  |  [Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Mac/x86) |
+## Installation :paperclip:
+| Platform     | URL              | Description   |
+|:-------------|:-----------------|-----------------|
+| Window       |    [Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Window/x86) | Run .exe file and enjoy!!           |
+| Linux        |    [Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Linux/x86)  | Run .x86 or .x86_64 and enjoy!!     |
+| MacOSX       |    [Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Mac/x86)    | Have bug about resolution :warning: |
 
-## What we have use in this project from OOP2 Class
+## What we have use in this project from OOP2 Class :orange_book:
 
 - Strategy design pattern
 - Polymorphism
 
-## What we have learn more from this project
+## What we have learn more from this project :ledger:
 
 - Object pool design pattern
 - C## language
 - Unity program
 - Dreamlo Online DataBase
 
-## Interesting Tech that we learn from this project
+## Interesting Tech that we learn from this project :open_mouth:
 
 - Component in Unity
   - In Unity, you can change your image into gameObject by just adding feature(Component) in your image.
