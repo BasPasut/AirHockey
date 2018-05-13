@@ -11,3 +11,15 @@ Our AirHockey is 2D arcade game that playe have to hit a puck into enemy's goal 
 ![Alt text](Assets/SampleUI/InGame.jpg)
 ### Score board
 ![Alt text](Assets/SampleUI/DataBase.jpg)
+
+## What we have use in this project from OOP2 Class
+
+- Strategy design pattern
+- Polymorphism
+- Data base
+
+## What we have learn more from this project
+
+- Object pool design pattern
+- C## language
+- Unity program
