@@ -12,14 +12,26 @@ Our AirHockey is 2D arcade game that playe have to hit a puck into enemy's goal 
 ### Score board
 ![Alt text](Assets/SampleUI/DataBase.jpg)
 
+## Installation
+| Platform | URL |How to Install|
+|:----------------:|:-----------:|:-----------:|
+|Window         |[Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Window/x86)  |Download the zip file from URL and extract it.|
+|Linux         |[Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Linux/x86)  |Download the zip file from URL, and extract it. Right click at the .x86_64 file, then Go to properties, and Go to Permission tab. Tick “Allow executing file as program” box. Run file as normal.|
+|MacOSX         |[Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Mac/x86)  |Download the zip file from URL and extract it.|
+
 ## What we have use in this project from OOP2 Class
 
 - Strategy design pattern
 - Polymorphism
-- Data base
 
 ## What we have learn more from this project
 
 - Object pool design pattern
 - C## language
 - Unity program
+- Dreamlo Online DataBase
+
+## Interesting Tech that we learn from this project
+
+- Component in Unity
+  - In Unity, you can change your image into gameObject by just adding feature(Component) in your image.
