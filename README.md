@@ -3,6 +3,8 @@
 
 Our AirHockey is 2D arcade game that playe have to hit a puck into enemy's goal with a limit time. While the game is playing there will be a 2 type of special puck that spawn in the middle of the scence. Which are buff and debuff special puck. To get a special puck action player have to hit a special puck in his goal. For example if player hit debuff puck to enemy goal the enemy will get a debuff action but if player hit a buff puck to his goal the player will get action of buff puck
 
+##### For the program's UML [here](https://drive.google.com/file/d/1IDuIlmwj7wHP3FxDT8Iok7lnlQzWYss1/view?usp=sharing).
+
 ### Mainmenu  
 ![Alt text](Assets/SampleUI/main.jpg)
 ### Select AI level    
@@ -18,8 +20,6 @@ Our AirHockey is 2D arcade game that playe have to hit a puck into enemy's goal 
 | Window  |  [Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Window/x86) | 
 | Linux   |  [Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Linux/x86) |
 | MacOSX  |  [Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Mac/x86) |
-
-###### For the program's UML [here](https://drive.google.com/file/d/1IDuIlmwj7wHP3FxDT8Iok7lnlQzWYss1/view?usp=sharing).
 
 ## What we have use in this project from OOP2 Class
 
