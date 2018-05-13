@@ -41,6 +41,7 @@ public class AIMovement : MonoBehaviour
 
     private float XaxisDelay;
 
+
     // Use this for initialization
     private void Start()
     {
@@ -78,7 +79,7 @@ public class AIMovement : MonoBehaviour
             if (buff.apPear)
                 SetAiMovePosition(buffpuck);
 
-            else
+            else if(debuff.apPear)
                 SetAiMovePosition(Debuffpuck);
         }
         else
@@ -135,4 +136,6 @@ public class AIMovement : MonoBehaviour
             rb.transform.localScale *= 2;
         }
     }
+
+   
 }

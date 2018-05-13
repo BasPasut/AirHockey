@@ -37,9 +37,9 @@ public class DebuffPuck : SpecialPuckController
     {
         if (currentTime % 20 == 0)
         {
+                SpecialPuckController.IsAppear = true;
             if (SPPuck.active == false)
             {
-                SpecialPuckController.IsAppear = true;
                 apPear = true;
                 SPPuck.SetActive(true);
                 rb.position = new Vector2(Random.Range(-2.08f, 2.16f), 0);

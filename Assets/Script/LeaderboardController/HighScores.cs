@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+ * Script for saving hight score in score board
+ */
 public class HighScores : MonoBehaviour
 {
 
@@ -77,6 +80,9 @@ public class HighScores : MonoBehaviour
 
 }
 
+/**
+ * Struct for highscore
+ */
 public struct Highscore
 {
     public string username;

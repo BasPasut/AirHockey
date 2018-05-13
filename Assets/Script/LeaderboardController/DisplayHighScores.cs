@@ -2,13 +2,16 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/**
+ * Script for showing score board
+ */
 public class DisplayHighScores : MonoBehaviour
 {
 
     public Text[] highscoreFields;
     HighScores highscoresManager;
 
-    void Start()
+    private void Start()
     {
         for (int i = 0; i < highscoreFields.Length; i++)
         {
@@ -31,6 +34,9 @@ public class DisplayHighScores : MonoBehaviour
         }
     }
 
+    /**
+     * Refresh score board 
+     */
     IEnumerator RefreshHighscores()
     {
         while (true)

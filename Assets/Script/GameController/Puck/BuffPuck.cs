@@ -36,9 +36,9 @@ public class BuffPuck : SpecialPuckController
     {
         if (currentTime % 30 == 0)
         {
+                SpecialPuckController.IsAppear = true;
             if (SPPuck.active == false)
             {
-                SpecialPuckController.IsAppear = true;
                 apPear = true;
                 SPPuck.SetActive(true);
                 //rb.velocity = new Vector2(0, 0);
