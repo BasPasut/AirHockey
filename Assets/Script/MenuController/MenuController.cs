@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /**
  * Script for main menu 
- */ 
+ */
 public class MenuController : MonoBehaviour {
 
-    private Difficulty difficulty;
     public AudioButtonController click;
     public GameObject start, normal, hard, impossible;
+    public string Level;
 
     /** Start game */
     private void PlayGame()
@@ -31,8 +32,8 @@ public class MenuController : MonoBehaviour {
     public void NormalLevel()
     {
         click.PlayButtonSound();
-        setDifficulty(new NormalDifficulty());
-        this.difficulty.handleDifficulty();
+        AILevel.selector = AILevel.Level.normal;
+        Level = "normal";
         PlayGame();
 
     }
@@ -41,8 +42,8 @@ public class MenuController : MonoBehaviour {
     public void HardLevel()
     {
         click.PlayButtonSound();
-        setDifficulty(new HardDifficulty());
-        this.difficulty.handleDifficulty();
+        AILevel.selector = AILevel.Level.hard;
+        Level = "hard";
         PlayGame();
 
     }
@@ -51,12 +52,9 @@ public class MenuController : MonoBehaviour {
     public void ImpossibleLevel()
     {
         click.PlayButtonSound();
-        setDifficulty(new ImpossibleDifficulty());
-        this.difficulty.handleDifficulty();
+        AILevel.selector = AILevel.Level.impossible;
+        Level = "impossible";
         PlayGame();
 
-    }
-    public void setDifficulty(Difficulty difficulty) {
-        this.difficulty = difficulty;
     }
 }

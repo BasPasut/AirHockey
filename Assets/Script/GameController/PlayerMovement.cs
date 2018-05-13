@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour {
 	private Collider2D playerCollider;
 
 	// Use this for initialization
-	private void Start () {
+	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
         startPosition = rb.position;
 		playerCollider = GetComponent<Collider2D>();
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour {
      * check if we click on the player or not if we click the player will follow our cursor 
      */
 	// Update is called once per frame
-	private void Update () {
+	void Update () {
 		if (Input.GetMouseButton (0)) {
 			Vector2 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			if (isClicked) {

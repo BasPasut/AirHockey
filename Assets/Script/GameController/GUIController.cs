@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /**
  * Script for scene to be show
@@ -11,7 +12,7 @@ public class GUIController : MonoBehaviour {
     [Header("Canvas")]
     public GameObject Canvas;
     public GameObject CanvasRestart;
-    public GameObject CanvasSpecialStage;
+    public GameObject CanvasLeaderboards;
 
     [Header("CanvasRestart")]
     public GameObject WinText;
@@ -20,50 +21,67 @@ public class GUIController : MonoBehaviour {
     public GameObject PauseText;
     public GameObject ResumeButton;
 
-    [Header("CanvasSpecialStage")]
-    public Rigidbody2D Minipuck;
+    [Header("CanvasLeaderboards")]
+    public Text InputText;
+    private string name;
+    public GameObject NameButton;
 
     [Header("Other")]
     public AudioController audioController;
 
     public ScoreController scoreController;
     public CountDownTimer countDownTimer;
+    public MenuController mc;
 
+
+    [Header("Puck")]
     public NormalPuckController puckController;
     public SpecialPuckController BuffPuck, DebuffPuck;
 
     public PlayerMovement playerMovement;
     public AIMovement aiMovement;
 
-    /**
-     * Show restart menu
-     */
-    public void ShowRestartCanvas(int isP2Win)
+   
+    /**Show Leaderboard */
+    public void ShowLeaderboard(int P1Score, int isP2Win)
     {
         Time.timeScale = 0;
 
+        CanvasLeaderboards.SetActive(true);
         Canvas.SetActive(false);
-        CanvasRestart.SetActive(true);
+        NameButton.SetActive(true);
+        HighScores.AddNewHighscore(name, P1Score);
 
         if (isP2Win == 1)
         {
             audioController.playLoseSound();
-            SetTextActive(false, false, true, false);
-            ResumeButton.SetActive(false);
         }
-        else if(isP2Win == -1)
+        else if (isP2Win == -1)
         {
             audioController.playWinSound();
-            SetTextActive(false, true, false, false);
-            ResumeButton.SetActive(false);
         }
         else
         {
             audioController.playDrawSound();
-            SetTextActive(false, false, false, true);
-            ResumeButton.SetActive(false);
+        }
+
+        
+        
+    }
+
+    public void EnterP1Name()
+    {
+        name = InputText.text.ToString();
+        if (string.IsNullOrEmpty(name))
+        {
+            name = "UNKNOWN";
+        }
+        else
+        {
+            NameButton.SetActive(false);
         }
     }
+
 
     /** 
      * Restart the game 
@@ -72,18 +90,20 @@ public class GUIController : MonoBehaviour {
     {
         Time.timeScale = 1;
 
+        countDownTimer.ResetTime();
         audioController.playButtonSound();
         Canvas.SetActive(true);
         CanvasRestart.SetActive(false);
+        CanvasLeaderboards.SetActive(false);
         ResumeButton.SetActive(true);
 
-        countDownTimer.ResetTime();
         scoreController.ResetScores();
         puckController.RestartPuckPosition();
         playerMovement.ResetPositon();
         aiMovement.ResetPositon();
         BuffPuck.ResetPuck();
         DebuffPuck.ResetPuck();
+
     }
 
     /**
@@ -96,6 +116,7 @@ public class GUIController : MonoBehaviour {
             audioController.playButtonSound();
             Canvas.SetActive(false);
             CanvasRestart.SetActive(true);
+            CanvasLeaderboards.SetActive(false);
             SetTextActive(true, false, false, false);
         }
         else

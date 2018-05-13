@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /**
  * Script for timer in the game
@@ -18,17 +17,17 @@ public class CountDownTimer : MonoBehaviour
     public SpecialPuckController Buffpuck, Debuffpuck;
 
     /**init time of the game when it start */
-    private void Start()
+    void Start()
     {
         startTime = timeRemaining;
         currentTime = (int)timeRemaining;
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
 
-        if (timeRemaining > 0)
+        if ((int)timeRemaining > 0)
         {
             Time.timeScale = 1;
             timeRemaining -= Time.deltaTime;
@@ -40,26 +39,28 @@ public class CountDownTimer : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 0;
             timeRemaining = 0;
             int P1Score = int.Parse(scoreController.P1ScoreText.text);
             int P2Score = int.Parse(scoreController.P2ScoreText.text);
             if (P1Score > P2Score)
             {
-                gController.ShowRestartCanvas(-1);
+                gController.ShowLeaderboard(P1Score,-1);
             }
-            else if (P1Score < P2Score)
+            else if(P2Score > P1Score)
             {
-                gController.ShowRestartCanvas(1);
+                gController.ShowLeaderboard(P1Score, 1);
             }
-            else
+            else if(P1Score == P2Score)
             {
-                gController.ShowRestartCanvas(0);
+                gController.ShowLeaderboard(P1Score, 0);
             }
+            
         }
     }
 
     /** print remaining time on scene if it out of time will print  "Time's up" */
-    public void OnBoard()
+    void OnBoard()
     {
         if (timeRemaining > 0)
         {

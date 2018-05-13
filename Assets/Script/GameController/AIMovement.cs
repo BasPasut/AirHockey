@@ -8,7 +8,7 @@ using UnityEngine;
 public class AIMovement : MonoBehaviour
 {
     /** max speed for AI */
-    private float MaxMovementSpeed;
+    public float MaxMovementSpeed;
     /** Rigidbody2D for AI */
     public Rigidbody2D rb;
     /** Start position for the AI*/
