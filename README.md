@@ -17,7 +17,7 @@ Our AirHockey is 2D arcade game that playe have to hit a puck into enemy's goal 
 ## Installation :paperclip:
 | PC | Linux |MacOSX|
 |:----------------:|:-----------:|:-----------:|
-|[Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Window/x86)         |[Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Linux/x86)   |[here](https://github.com/BasPasut/AirHockey/tree/master/Build/Mac/x86)|
+|[Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Window/x86)         |[Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Linux/x86)   |[Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Mac/x86)|
 
 ##### Comment MacOSX still have bugs about resolution. We'll try to fix it in the next patch.
 
