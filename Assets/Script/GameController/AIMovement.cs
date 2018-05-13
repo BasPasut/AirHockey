@@ -105,7 +105,7 @@ public class AIMovement : MonoBehaviour
             if (offSetDelay)
             {
                 offSetDelay = false;
-                XaxisDelay = Random.Range(-4f, 4f);
+                XaxisDelay = Random.Range(-1f, 1f);
             }
             movementSpeed = MaxMovementSpeed * Random.Range(0.1f, 0.3f);
             targetPosition = new Vector2(Mathf.Clamp(PuckType.position.x + XaxisDelay, playerBoundary.Left, playerBoundary.Right), startingPosition.y);

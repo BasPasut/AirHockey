@@ -12,6 +12,11 @@ public class MenuController : MonoBehaviour {
     public string Level;
     private Difficulty difficulty;
 
+    private void Start()
+    {
+        SpecialPuckController.IsAppear = true;
+    }
+
 
     /** Start game */
     private void PlayGame()
