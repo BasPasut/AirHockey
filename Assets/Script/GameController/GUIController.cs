@@ -24,14 +24,15 @@ public class GUIController : MonoBehaviour {
     [Header("CanvasLeaderboards")]
     public Text InputText;
     private string name;
-    public GameObject NameButton;
+    public Button NameButton;
+    public Text buttonText;
+    private int score;
 
     [Header("Other")]
     public AudioController audioController;
 
     public ScoreController scoreController;
     public CountDownTimer countDownTimer;
-    public MenuController mc;
 
 
     [Header("Puck")]
@@ -49,8 +50,10 @@ public class GUIController : MonoBehaviour {
 
         CanvasLeaderboards.SetActive(true);
         Canvas.SetActive(false);
-        NameButton.SetActive(true);
-        HighScores.AddNewHighscore(name, P1Score);
+        NameButton.enabled = true;
+        buttonText.text = "Enter:";
+        score = P1Score;
+        
 
         if (isP2Win == 1)
         {
@@ -78,7 +81,9 @@ public class GUIController : MonoBehaviour {
         }
         else
         {
-            NameButton.SetActive(false);
+            NameButton.enabled = false;
+            buttonText.text = "      OK";
+            HighScores.AddNewHighscore(name, score);
         }
     }
 

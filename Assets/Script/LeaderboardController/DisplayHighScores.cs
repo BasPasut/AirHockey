@@ -14,8 +14,7 @@ public class DisplayHighScores : MonoBehaviour
         {
             highscoreFields[i].text = i + 1 + ". Fetching...";
         }
-
-
+        
         highscoresManager = GetComponent<HighScores>();
         StartCoroutine("RefreshHighscores");
     }
@@ -37,7 +36,7 @@ public class DisplayHighScores : MonoBehaviour
         while (true)
         {
             highscoresManager.DownloadHighscores();
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(10);
         }
     }
 }
