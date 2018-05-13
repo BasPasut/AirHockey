@@ -16,7 +16,7 @@ Our AirHockey is 2D arcade game that playe have to hit a puck into enemy's goal 
 
 ## Installation :paperclip:
 | Platform     | URL              | Description   |
-|:-------------|:-----------------|-----------------|
+|:-------------:|:-----------------:|:-----------------:|
 | Window       |    [Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Window/x86) | Run .exe file and enjoy!!           |
 | Linux        |    [Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Linux/x86)  | Run .x86 or .x86_64 and enjoy!!     |
 | MacOSX       |    [Click](https://github.com/BasPasut/AirHockey/tree/master/Build/Mac/x86)    | Have bug about resolution :warning: |
