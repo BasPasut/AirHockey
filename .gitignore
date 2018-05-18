@@ -29,6 +29,7 @@ nb-configuration.xml
 
 #Config file
 Config.cs
+Config.cs.meta
 
 # MacOS junk
 .DS_Store
