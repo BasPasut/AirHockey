@@ -1,13 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/**
- * Script for saving hight score in score board
- */
 public class HighScores : MonoBehaviour
 {
 
-    const string privateCode = "ddQHR6_f4keHMODEUgC8WgCh9Z1BQEiE2C3yMABEDrhg";
+    private string privateCode;
     const string publicCode = "5af721e6191a850bccf21f46";
     const string webURL = "http://dreamlo.com/lb/";
 
@@ -17,6 +14,8 @@ public class HighScores : MonoBehaviour
 
     void Awake()
     {
+        Config pKey = new Config();
+        this.privateCode = pKey.PrivateKey;
         highscoreDisplay = GetComponent<DisplayHighScores>();
         instance = this;
     }
@@ -80,9 +79,6 @@ public class HighScores : MonoBehaviour
 
 }
 
-/**
- * Struct for highscore
- */
 public struct Highscore
 {
     public string username;

@@ -2,22 +2,20 @@
 using System.Collections;
 using UnityEngine.UI;
 
-/**
- * Script for showing score board
- */
 public class DisplayHighScores : MonoBehaviour
 {
 
     public Text[] highscoreFields;
     HighScores highscoresManager;
 
-    private void Start()
+    void Start()
     {
         for (int i = 0; i < highscoreFields.Length; i++)
         {
             highscoreFields[i].text = i + 1 + ". Fetching...";
         }
-        
+
+
         highscoresManager = GetComponent<HighScores>();
         StartCoroutine("RefreshHighscores");
     }
@@ -34,15 +32,12 @@ public class DisplayHighScores : MonoBehaviour
         }
     }
 
-    /**
-     * Refresh score board 
-     */
     IEnumerator RefreshHighscores()
     {
         while (true)
         {
             highscoresManager.DownloadHighscores();
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(5);
         }
     }
 }
