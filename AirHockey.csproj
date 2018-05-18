@@ -96,7 +96,6 @@
     <Compile Include="Assets\Script\GameController\Puck\NormalPuckController.cs" />
     <Compile Include="Assets\Script\GameController\Puck\SpecialPuckController.cs" />
     <Compile Include="Assets\Script\GameController\ScoreController.cs" />
-    <Compile Include="Assets\Script\LeaderboardController\Config.cs" />
     <Compile Include="Assets\Script\LeaderboardController\DisplayHighScores.cs" />
     <Compile Include="Assets\Script\LeaderboardController\HighScores.cs" />
     <Compile Include="Assets\Script\MenuController\AudioButtonController.cs" />
